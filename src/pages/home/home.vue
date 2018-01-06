@@ -1,0 +1,68 @@
+<template>
+  <el-container>
+    <!-- 侧栏导航 -->
+    <el-aside width="200px">
+      <el-row ><!--导航-->
+      <el-col  class="nav">
+        <el-menu router=true default-active="2" class="el-menu-vertical-demo" text-color="#fff" background-color="#545c64" active-text-color="#ffd04b">
+          <el-submenu index="/apply">
+            <template slot="title">
+              <i class="el-icon-message"></i>
+              <span>应用</span>
+            </template>
+            <el-menu-item-group>
+              <el-menu-item index="/student/info"><i class="el-icon-document"></i>正在运行</el-menu-item>
+              <el-menu-item index="/student/grade"><i class="el-icon-document"></i>已停止</el-menu-item>
+            </el-menu-item-group>
+          </el-submenu>
+
+          <el-menu-item index="/repo">
+            <i class="el-icon-menu"></i>
+            <span slot="title">镜像仓库</span>
+          </el-menu-item>
+
+          <el-menu-item index="/apply_templet">
+            <i class="el-icon-menu"></i>
+            <span slot="title">应用模板</span>
+          </el-menu-item>
+
+          <el-menu-item index="/master">
+            <i class="el-icon-menu"></i>
+            <span slot="title">主机</span>
+          </el-menu-item>
+
+          <el-menu-item index="/internet">
+            <i class="el-icon-menu"></i>
+            <span slot="title">网络</span>
+          </el-menu-item>
+
+          <el-menu-item index="/user">
+            <i class="el-icon-menu"></i>
+            <span slot="title">用户中心</span>
+          </el-menu-item>
+          
+        </el-menu>
+      </el-col>
+    </el-row>
+    </el-aside>
+    
+    <!--右侧  -->
+    <el-container>
+      <!-- 右侧header -->
+      <el-header></el-header>
+
+      <!-- 右侧main -->
+      <el-main></el-main>
+
+      <!-- 右侧footer -->
+      <el-footer></el-footer>
+
+    </el-container>
+</el-container>
+</template>
+
+<style lang="scss">
+@import "./home.scss";
+</style>
+
+<script src="./home.js"></script>
