@@ -1,5 +1,5 @@
 <template>
-  <div id="apply">
+  <div id="repo">
     {{msg}}
     <hr/>
     <router-view></router-view>
@@ -8,10 +8,10 @@
 
 <script>
 export default {
-  name: 'apply',
+  name: 'repo',
   data () {
     return {
-      msg: '应用'
+      msg: '镜像仓库'
     }
   }
 }

@@ -1,3 +1,3 @@
 <template>
-  <h1>login</h1>
+  <h1>stoped</h1>
 </template>
