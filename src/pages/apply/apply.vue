@@ -1,7 +1,5 @@
 <template>
   <div id="apply">
-    {{msg}}
-    <hr/>
     <router-view></router-view>
   </div>
 </template>

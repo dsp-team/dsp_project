@@ -1,3 +1,3 @@
 <template>
-  <h1>running</h1>
+  <p>running</p>
 </template>
