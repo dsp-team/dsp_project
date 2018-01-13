@@ -18,7 +18,7 @@
                                 <el-input v-model.number="ruleForm2.username" placeholder="请输入账号"></el-input>
                             </el-form-item>
                             <el-form-item label="密码" prop="password">
-                                <el-input type="password" v-model="ruleForm2.password" auto-complete="off"  placeholder="请输入密码"></el-input>
+                                <el-input type="password" v-model="ruleForm2.password" auto-complete="off"  placeholder="请输入密码"  @keyup.enter.native="submitForm('ruleForm2')"></el-input>
                             </el-form-item>                           
                             <el-form-item>
                                 <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
