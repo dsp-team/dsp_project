@@ -88,7 +88,7 @@
                 that.open()
              })   
         } else {
-            this.open();
+            return false;
           }
         });
       },
