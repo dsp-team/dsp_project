@@ -2,17 +2,17 @@ import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
 
-import Login from '@/pages/login/login'
-import Apply from '@/pages/apply/apply'
-import Home from '@/pages/home/home'
-import Running from '@/pages/apply/running/running'
-import Stoped from '@/pages/apply/stoped/stoped'
+import Login from '@/pages/login/login.vue'
+import Apply from '@/pages/apply/apply.vue'
+import Home from '@/pages/home/home.vue'
+import Running from '@/pages/apply/running/running.vue'
+import Stoped from '@/pages/apply/stoped/stoped.vue'
 
-import Repo from '@/pages/repo/repo'
-import ApplyTemplet from '@/pages/apply_templet/apply_templet'
-import Master from '@/pages/master/master'
-import Internet from '@/pages/internet/internet'
-import UserCenter from '@/pages/user_center/user_center'
+import Repo from '@/pages/repo/repo.vue'
+import ApplyTemplet from '@/pages/apply_templet/apply_templet.vue'
+import Master from '@/pages/master/master.vue'
+import Internet from '@/pages/internet/internet.vue'
+import UserCenter from '@/pages/user_center/user_center.vue'
 
 // import index from 'vue';
 

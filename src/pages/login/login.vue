@@ -14,11 +14,11 @@
                         <h4 class="subtitle">简易云平台</h4>
                         <hr class="hr-gradient">
                         <el-form :model="ruleForm2" status-icon :rules="rules2" ref="ruleForm2" label-width="100px" class="demo-ruleForm">
-                            <el-form-item label="用户名" prop="name" >
-                                <el-input v-model.number="ruleForm2.name"></el-input>
+                            <el-form-item label="用户名" prop="username" >
+                                <el-input v-model.number="ruleForm2.username" placeholder="请输入账号"></el-input>
                             </el-form-item>
-                            <el-form-item label="密码" prop="pass">
-                                <el-input type="password" v-model="ruleForm2.pass" auto-complete="off"></el-input>
+                            <el-form-item label="密码" prop="password">
+                                <el-input type="password" v-model="ruleForm2.password" auto-complete="off"  placeholder="请输入密码"></el-input>
                             </el-form-item>                           
                             <el-form-item>
                                 <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
@@ -34,48 +34,61 @@
 </template>
 
 <script>
-    
-
  export default {
     data() {
       var checkName = (rule, value, callback) => {
         if (!value) {
           return callback(new Error('用户名不能为空'));
         }
+        callback();
+     
       };
       var validatePass = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请输入密码'));
-        } else {
-          if (this.ruleForm2.checkPass !== '') {
-            this.$refs.ruleForm2.validateField('checkPass');
-          }
-          callback();
-        }
+        } 
+       callback();
+       
       };
       return {
         ruleForm2: {
-          name: '',
-          pass: ''
+          username: '',
+          password: ''
         },
         rules2: {
-          name: [
+          username: [
             { validator: checkName, trigger: 'blur' }
           ],
-          pass: [
+          password: [
             { validator: validatePass, trigger: 'blur' }
           ]
         }
       };
     },
     methods: {
+       open() {
+        const h = this.$createElement;
+          this.$notify.error({
+          title: '错误',
+          message: '请输入正确的用户名密码'
+        });
+      },
       submitForm(formName) {
-        this.$refs[formName].validate((valid) => {
-          if (valid) {
-            alert('submit!');
-          } else {
-            console.log('error submit!!');
-            return false;
+        this.$refs[formName].validate((valid) => {                 
+        if (valid) {
+          let that = this        
+          this.axios.post('/api/dsp/auth/login',this.ruleForm2).then((response) => {
+              let flag = response.data
+              if(flag == true) {
+                this.$router.push({name: 'home'})
+                } else {
+                  that.open()
+                }
+             }).catch((error) => {
+                that.open()
+             })   
+        } else {
+            this.open();
           }
         });
       },

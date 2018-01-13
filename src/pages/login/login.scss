@@ -47,17 +47,21 @@
                     }
                     .hr-gradient {
                         width: 120px;
-                        margin: 6px auto 14px;
+                        // margin: 6px auto 14px;
                         border-top: none;
                         background: linear-gradient(90deg,#fff 0,#e4e7ed 30px,#e4e7ed calc(100% - 30px),#fff);
-                        margin: 0;
+                        // margin: 0;
                         height: 1px;
                         display: block;
                         unicode-bidi: isolate;
-                        -webkit-margin-before: -1rem;
-                        -webkit-margin-after: 1.5rem;
+                        -webkit-margin-before: -1em;
+                        -webkit-margin-after: 1.5em;
                         -webkit-margin-start: auto;
                         -webkit-margin-end: auto;
+                        // -moz-margin-before: -.5rem;
+                        // -moz-margin-after: 1.5rem;
+                        -moz-margin-start: auto;
+                        -moz-margin-end: auto;
                         overflow: hidden;
                     }
                     .el-form-item__label {
