@@ -2,7 +2,7 @@
   <el-container>
     <!-- 侧栏导航 -->
     <el-aside width="200px">
-    
+      <div class="nav_logo"></div>
       <el-row class="container"><!--导航-->
       <el-col :span='24'  class="nav">
         <el-menu router=true default-active="2" class="el-menu-vertical-demo" text-color="#fff" background-color="#545c64" active-text-color="#ffd04b">
