@@ -14,7 +14,7 @@
 
   .el-header, .el-footer {
     width: 100%;
-    background-color: #545C64;
+    background-color: white;
     color: #333;
     text-align: center;
     line-height: 60px;
@@ -39,4 +39,22 @@
     text-align: center;
     line-height: 160px;
   }
-  
+.el-header {
+   display: flex;
+   flex-flow: row;
+   section {
+    top: 0;
+    bottom: 0;
+    height: 100%;
+   }
+    .blank-bar {
+      flex: 3;
+    }
+    .tool-bar {
+      flex: 1;
+    }
+    .user-bar {
+      flex: 1;
+    }
+}
+

@@ -18,10 +18,10 @@
                                 <el-input v-model.number="ruleForm2.username" placeholder="请输入账号"></el-input>
                             </el-form-item>
                             <el-form-item label="密码" prop="password">
-                                <el-input type="password" v-model="ruleForm2.password" auto-complete="off"  placeholder="请输入密码"></el-input>
+                                <el-input type="password" v-model="ruleForm2.password" auto-complete="off"  placeholder="请输入密码" @keyup.enter.native="submitForm('ruleForm2')"></el-input>
                             </el-form-item>                           
                             <el-form-item>
-                                <el-button type="primary" @click="submitForm('ruleForm2')">登录</el-button>
+                                <el-button type="primary" @click="submitForm('ruleForm2')" >登录</el-button>
                                 <el-button @click="resetForm('ruleForm2')">重置</el-button>
                             </el-form-item>
                         </el-form>
@@ -80,6 +80,7 @@
           this.axios.post('/api/dsp/auth/login',this.ruleForm2).then((response) => {
               let flag = response.data
               if(flag == true) {
+                sessionStorage.username = this.ruleForm2.username
                 this.$router.push({name: 'home'})
                 } else {
                   that.open()
@@ -88,15 +89,15 @@
                 that.open()
              })   
         } else {
-            this.open();
+            that.open()
           }
         });
       },
       resetForm(formName) {
-        this.$refs[formName].resetFields();
+        this.$refs[formName].resetFields();   
       }
     }
-  }
+ }
 </script>
 
 

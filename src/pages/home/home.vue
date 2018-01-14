@@ -53,11 +53,15 @@
     <!--右侧  -->
     <el-container>
       <!-- 右侧header -->
-      <el-header></el-header>
+      <el-header>
+          <section class="blank-bar"></section>
+          <section class="tool-bar"></section>
+          <section class="user-bar"></section>
+      </el-header>
 
       <!-- 右侧main -->
       <el-main>
-        <el-col :span='24'><!--放置路由 显示-->
+        <!--<el-col :span='24'>放置路由 显示-->
         <router-view/>
       </el-col>
       </el-main>

@@ -1,8 +1,16 @@
 <template>
   <div id="user_center">
-    {{msg}}
-    <hr/>
-    <router-view></router-view>
+     <div class="container">
+        <div class="user-info">
+          我的信息
+        </div>
+        <div class="user-name">
+          名字
+        </div>
+        <div class="user-pass">
+          密码
+        </div>
+     </div>
   </div>
 </template>
 
@@ -11,8 +19,12 @@ export default {
   name: 'user_center',
   data () {
     return {
-      msg: '用户中心'
+      name: '用户中心'
     }
   }
 }
 </script>
+
+<style lang="scss">
+@import "./user_center.scss";
+</style>

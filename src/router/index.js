@@ -17,7 +17,6 @@ import UserCenter from '@/pages/user_center/user_center.vue'
 // import index from 'vue';
 
 Vue.use(Router)
-
 export default new Router({
   routes: [
     {
@@ -29,6 +28,19 @@ export default new Router({
       path: '/home',
       name: 'home',
       component: Home,
+      meta: {
+        requireAuth: true
+      },
+      beforeEnter: function (to, from, next) {
+        if (sessionStorage.username) {
+          next()
+        } else {
+          alert('请先登录！')
+          next({
+            path: '/'
+          })
+        }
+      },
       children: [
         {
           path: '/apply',
