@@ -56,7 +56,15 @@
       <el-header>
           <section class="blank-bar"></section>
           <section class="tool-bar"></section>
-          <section class="user-bar"></section>
+          <section class="user-bar">
+            <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
+                  <el-submenu index="2">
+                    <template slot="title">{{username}}</template>
+                    <el-menu-item index="2-1" @click="toUserinfo()">个人信息</el-menu-item>
+                    <el-menu-item index="2-2" @click="toSignOut()">退出</el-menu-item>
+                  </el-submenu>
+                  </el-menu>
+          </section>
       </el-header>
 
       <!-- 右侧main -->

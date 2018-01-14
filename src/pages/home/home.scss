@@ -14,18 +14,25 @@
 
   .el-header, .el-footer {
     width: 100%;
-    background-color: white;
+    // background-color: white;
     color: #333;
     text-align: center;
     line-height: 60px;
   }
   
   .el-aside {
-    background-color: #545C64;
-    color: #333;
+    background-color: #1f2126;
+    color: #909399;
     text-align: left;
     line-height: 200px;
     min-width: 200px;
+    overflow: hidden;
+    ul{
+      width: 100%;
+      li,.el-submenu__title{
+        background-color: #1f2126!important;     
+      }
+    }
   }
 
   .el-menu-item{
@@ -54,7 +61,14 @@
       flex: 1;
     }
     .user-bar {
+      margin-right: -4rem;
       flex: 1;
+      .el-submenu .el-menu-item{
+        width: 20px !important;
+      }
     }
-}
 
+}
+.el-footer {
+  background-color: #E9EEF3
+}

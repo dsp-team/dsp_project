@@ -26,6 +26,7 @@
                             </el-form-item>
                         </el-form>
                     </div>
+                    {{ruleForm2}}
                 </div>
             </div>
             <footer class="login-footer">Docker Simple Platform 1.0 | Docker 简易云平台</footer>

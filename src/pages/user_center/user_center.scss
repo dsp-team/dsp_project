@@ -4,26 +4,53 @@
     right: 0;
     bottom: 0;
     width: 100%;
-    // height: 100%;
+    height: 100%;
     .container {
-        border: 10px;
-        width: 60rem;
-        height: 20rem;
-        background-color: blue;
-        display: flex;
-        flex-flow: column;
+        color: #3d444f;
+        font-size: 14px;
+        font-weight: 400;
+        border: 1px solid #e4e7ed;
+        border-radius: 4px;
+        box-shadow: 0 1px 4px rgba(204,209,217,.3);
+        background-color: #fff;
+        line-height: 1;
+        text-align: left;
         .user-info {
-            flex: 1;
-            // z-index: 99;
-            // background-color: #E9EEF3;
+                position: relative;
+                padding: 30px 20px 30px;
+                background-color: #f5f7fa;
+                border-radius: 4px 4px 0 0;
+                border-bottom: 1px solid #e4e7ed;
+                box-shadow: inset 0 1px 0 0 hsla(0,0%,100%,.6);
         }
         .user-name {
-            flex: 1;
-            //  background-color: white;
+                 position: relative;
+                 padding: 30px 20px;
+                 .name {
+                     margin-left: 3.5rem;
+                 }
         }
         .user-pass {
-            flex: 1;
-            //  background-color: white;
-        }
+            border-top: 1px solid #e4e7ed;
+            background-color: white;
+            position: relative;
+            padding: 30px 20px;
+            
+            
+            span {
+                float: left;
+            }
+            .el-input__inner {
+                    line-height: 1;
+                    vertical-align: middle;
+                    width: 16rem;
+                    margin-left: 6rem;
+                    margin-top: -2rem;
+            }
+            .el-button {
+                    margin-left: 10.5rem;
+                    margin-top: 1rem;
+            }
+         }
     }
 }
