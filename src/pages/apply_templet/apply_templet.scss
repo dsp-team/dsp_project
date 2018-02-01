@@ -1,0 +1,41 @@
+.templet_container{
+  .templet_btn{
+    float: left;
+    margin: 10px;
+  }
+  .templet{
+    .templet_box{
+      width: 240px;
+      height: 120px;
+      border: 1px solid #cccccc;
+      border-radius: 8px;
+      box-shadow: 2px 2px 4px #ccc;
+      background-color: #ffffff;
+      float: left;
+      margin: 10px;
+      list-style: none;
+      text-align: left;
+      line-height: 100px;
+      font-size: 16px;
+      img{
+        float: left;
+        margin: 10px;
+        width: 80px;
+      }
+    }
+    
+  }
+  .el-dialog{
+    .el-dialog__header{
+      height: 100px;
+      border-bottom: 1px solid #E4E7ED;
+    }
+    .el-dialog__body{
+
+    }
+    .el-dialog__footer{
+
+    }
+  }
+  
+}

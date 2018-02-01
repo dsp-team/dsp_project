@@ -25,11 +25,14 @@ body{
     line-height: 200px;
     min-width: 200px;
     .el-row{
+      overflow: hidden;
       background-color: #1F2D3D;
       .nav{
+        
         ul{
           // 去除elementui自带的width问题
           width:100%;
+         
           li,.el-submenu__title{
             background-color: #1F2D3D !important;
           }

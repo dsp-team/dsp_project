@@ -6,11 +6,19 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
+    // env:require('./dev.env'),
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/c': { //使用"/api"来代替"http://f.apiplus.c" 
+          target: 'http://192.168.66.6', //源地址 
+          changeOrigin: true, //改变源 
+          pathRewrite: { 
+          '^/c': 'http://192.168.66.6' //路径重写 
+        }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -74,3 +82,4 @@ module.exports = {
     bundleAnalyzerReport: process.env.npm_config_report
   }
 }
+

@@ -52,6 +52,10 @@
                       color: #9ba3af;
                       display: block;
                       font-weight: 500;
+                      margin-bottom: 10px;
+                  }
+                  .hr-gradient{
+                      margin-top: 14px;
                   }
                   .hr-gradient::before,.hr-gradient::after {
                       content: '';
