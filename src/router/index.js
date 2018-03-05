@@ -10,6 +10,7 @@ import Stoped from '@/pages/apply/stoped/stoped.vue'
 
 import Repo from '@/pages/repo/repo.vue'
 import ApplyTemplet from '@/pages/apply_templet/apply_templet.vue'
+import TempletDetail from '@/pages/apply_templet/detail/templet_detail.vue'
 import Master from '@/pages/master/master.vue'
 import Internet from '@/pages/internet/internet.vue'
 import UserCenter from '@/pages/user_center/user_center.vue'
@@ -56,6 +57,11 @@ export default new Router({
           path: '/apply_templet',
           name: 'apply_templet',
           component: ApplyTemplet
+        },
+        {
+          path: '/apply_templet/:id',
+          name: 'apply_templet.detail',
+          component: TempletDetail
         },
         {
           path: '/master',

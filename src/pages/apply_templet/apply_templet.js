@@ -9,6 +9,7 @@ export default {
   },
   data () {
     return {
+      form: {},
       // dialog: false
       title: '创建应用模板',
       dialogVisible: false
@@ -26,6 +27,12 @@ export default {
     //   this.dialog = true
     //   this.title = '创建模板'
     // },
+    gotoDetail (item) {
+      this.$router.push({
+        name: 'apply_templet.detail',
+        params: {id: item}
+      })
+    },
     ...mapActions([
       'find',
       'zhuji'

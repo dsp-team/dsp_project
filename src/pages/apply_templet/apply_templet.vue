@@ -7,15 +7,20 @@
         icon="el-icon-plus"
         class="templet_btn"
         @click="dialogVisible = true">创建应用模板</el-button>
-        <el-button 
+        <!-- <el-button 
         type="primary"
         icon="el-icon-plus"
         class="templet_btn"
-        @click="zhuji">创建应用模板</el-button>
+        @click="zhuji">创建应用模板</el-button> -->
     </el-col>
     <el-col :span="24" class="templet">
        <ul>
-         <li v-for="item in templets" :key="item" class="templet_box">
+         <li
+          v-for="item in templets"
+          :key="item"
+          class="templet_box"
+          href="javascript:void(0)"
+          @click="gotoDetail(item)">
            <img src="../../assets/templet.png"/>
            <span>{{item}}</span>
          </li>
@@ -23,12 +28,12 @@
     </el-col>
 
   <!-- 创建模板模态框 -->
+  <!-- :before-close="handleClose" -->
     <el-dialog
       :title="title"
       class="templet_dialog"
       :visible.sync="dialogVisible"
-      width="30%"
-      :before-close="handleClose">
+      width="30%">
       <span>名称</span>
       <el-input v-model="input" placeholder="请输入名称"></el-input>
       <el-input v-model="input" placeholder="请输入简介"></el-input>

@@ -14,13 +14,13 @@ export default {
   },
   actions: {
     find: (context) => {
-      axios.get('/api/dsp/apptemplate/getall').then((res) => {
+      axios.get('http://192.168.66.6:80/api/dsp/apptemplate/getall').then((res) => {
         context.commit('alterTemplets', res.data)
         console.log(res.data)
       })
     },
     zhuji: (context) => {
-      axios.get('/api/v1/nodes/').then((res) => {
+      axios.get('http://192.168.66.6/api/dsp/apptemplate/getall/api/v1/nodes/').then((res) => {
         context.commit('alterTemplets', res)
         console.log(res)
       })
