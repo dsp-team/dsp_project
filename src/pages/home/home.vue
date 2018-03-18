@@ -43,9 +43,7 @@
           </el-menu-item>
           
         </el-menu>
-      </el-col>
-
-      
+      </el-col>    
     </el-row>
  
     </el-aside>
@@ -53,13 +51,13 @@
     <!--右侧  -->
     <el-container>
       <!-- 右侧header -->
-      <el-header></el-header>
+      <!-- <el-header></el-header> -->
 
       <!-- 右侧main -->
       <el-main>
-        <el-col :span='24'><!--放置路由 显示-->
-        <router-view/>
-      </el-col>
+        <el-col><!--放置路由 显示-->
+          <router-view/>
+        </el-col>
       </el-main>
 
       <!-- 右侧footer -->
