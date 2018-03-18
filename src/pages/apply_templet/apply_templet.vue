@@ -13,7 +13,7 @@
         class="templet_btn"
         @click="zhuji">创建应用模板</el-button> -->
     </el-col>
-    <el-col :span="24" class="templet">
+    <!-- <el-col :span="24" class="templet">
        <ul>
          <li
           v-for="item in templets"
@@ -25,7 +25,7 @@
            <span>{{item}}</span>
          </li>
        </ul>
-    </el-col>
+    </el-col> -->
 
   <!-- 创建模板模态框 -->
   <!-- :before-close="handleClose" -->
