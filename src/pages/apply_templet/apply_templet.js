@@ -54,16 +54,30 @@ export default {
     deleteTemp (data) {
       // alert()
       console.log(data)
-      this.deleteTemplate(data).then((res) => {
-        this.$message({
-          message: '删除成功',
-          type: 'success'
+      this.$confirm('此操作将永久删除该文件, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.deleteTemplate(data).then((res) => {
+          this.$message({
+            showClose: true,
+            message: '删除成功',
+            type: 'success'
+          })
+        }).catch((error) => {
+          console.log(error)
+          this.$message({
+            showClose: true,
+            message: '删除失败',
+            type: 'error'
+          })
         })
-      }).catch((error) => {
-        console.log(error)
+      }).catch(() => {
         this.$message({
-          message: '删除失败',
-          type: 'error'
+          showClose: true,
+          type: 'info',
+          message: '已取消删除'
         })
       })
     },
