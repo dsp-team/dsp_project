@@ -59,7 +59,7 @@ export default new Router({
           component: ApplyTemplet
         },
         {
-          path: '/apply_templet/:id',
+          path: '/apply_templet/:name',
           name: 'apply_templet.detail',
           component: TempletDetail
         },

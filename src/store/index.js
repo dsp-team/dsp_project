@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import templet from './templet' // 应用模板
+import templetStore from './templetStore' // 应用模板
 // import clazzStore from './clazzStore'
 // import courseStore from './courseStore'
 import masterStore from './masterStore/masterStore.js' // 主机
@@ -8,7 +8,7 @@ import masterStore from './masterStore/masterStore.js' // 主机
 Vue.use(Vuex)
 export default new Vuex.Store({
   modules: {
-    templet,
+    templetStore,
     masterStore
   }
 })
