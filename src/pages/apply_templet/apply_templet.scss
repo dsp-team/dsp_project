@@ -12,14 +12,19 @@
     float: left;
     margin: 10px;
   }
+  // 放置模板容器
   .templet{
-    // position: relative;
+    .el-card{
+      width: 240px;
+      height:100vh;
+    }
+    // 每个模板
     .templet_box{
       width: 240px;
       height: 120px;
-      border: 1px solid #e4e7ed;
+      // border: 1px solid #e4e7ed;
       border-radius: 4px;
-      box-shadow: 0 0 4px #ccc;
+      // box-shadow: 0 0 4px #ccc;
       background-color: #ffffff;
       float: left;
       margin: 10px;

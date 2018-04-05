@@ -2,38 +2,44 @@
   
   <el-row class="templet_container">
     <el-col :span="24">
-      <el-button 
-        type="primary"
-        icon="el-icon-plus"
-        class="templet_btn"
-        @click="dialogVisible = true">创建应用模板</el-button>
-      <!-- <el-button 
-        type="primary"
-        icon="el-icon-plus"
-        class="templet_btn"
-        @click="zhuji">创建应用模板</el-button> -->
+      <el-card class="box-card">
+        <div slot="header" class="clearfix">
+          <span>应用模板</span>
+        </div>
+        <div class="text item">
+          <el-button 
+            type="primary"
+            icon="el-icon-plus"
+            class="templet_btn"
+            @click="dialogVisible = true">创建应用模板
+          </el-button>
+          <el-col :span="24"
+            class="templet">
+              <el-card
+                class="templet_box"
+                shadow="hover"
+                v-for="item in templates"
+                :key="item"
+                href="javascript:void(0)">
+                <img src="../../assets/templet.png"
+                    @click="gotoDetail(item)"/>
+                  <span :model="templateName">{{item}}</span>{{templateName}}
+                  <div class="top clearfix">
+                    <el-button
+                      type="danger"
+                      icon="el-icon-close"
+                      circle
+                      size="mini"
+                      @click="deleteTemp(item)"></el-button>
+                  </div>
+              </el-card>
+          </el-col>
+        </div>
+      </el-card>
+
+      
     </el-col>
-    <el-col :span="24"
-      class="templet">
-       <ul>
-         <li class="templet_box"
-          v-for="item in templates"
-         :key="item"
-          href="javascript:void(0)">
-            <img src="../../assets/templet.png" @click="gotoDetail(item)"/>
-            <span :model="templateName">{{item}}</span>{{templateName}}
-            <div class="top clearfix">
-              <el-button
-                type="danger"
-                icon="el-icon-close"
-                circle
-                size="mini"
-                @click="deleteTemp(item)"></el-button>
-            </div>
-          </li>
-          
-        </ul>
-    </el-col>
+    
   
 
   <!-- 创建模板模态框 -->
