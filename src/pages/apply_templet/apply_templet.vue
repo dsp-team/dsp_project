@@ -7,10 +7,10 @@
           <span>应用模板</span>
         </div>
         <div class="text item">
-          <el-button 
+          <el-button
+            class="templet_btn"
             type="primary"
             icon="el-icon-plus"
-            class="templet_btn"
             @click="dialogVisible = true">创建应用模板
           </el-button>
           <el-col :span="24"

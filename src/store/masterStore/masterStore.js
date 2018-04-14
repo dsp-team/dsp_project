@@ -26,10 +26,24 @@ export default {
       })
     },
     //  接入主机
-    insertPorts: (context, data) => {
+    insertMaster: (context, form) => {
+      console.log(form)
       return new Promise((resolve, reject) => {
-        axios.post('http://192.168.123.251:81/api/v1/nodes', data).then(function (result) {
+        axios.put('/api/v1/nodes', form).then(function (result) {
           // 保存成功之后
+          context.dispatch('getMasters')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
+      })
+    },
+    deleteMasters: (context, nodeIp) => {
+      console.log(nodeIp)
+      return new Promise((resolve, reject) => {
+        axios.put(`/api/v1/nodes?node_ip=${nodeIp}&node_port=2376&force=True`, nodeIp)
+        .then(function (result) {
+          // 删除成功之后
           context.dispatch('getMasters')
           resolve(result)
         }).catch((error) => {

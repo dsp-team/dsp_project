@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://192.168.123.251'
-axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8'
+// axios.defaults.baseURL = 'http://192.168.123.251'
+// axios.defaults.headers['Content-Type'] = 'application/json;charset=UTF-8'
 
 export default {
   state: {

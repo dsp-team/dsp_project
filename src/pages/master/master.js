@@ -20,30 +20,41 @@ export default {
     ...mapGetters(['masters'])
   },
   methods: {
-    // 1 dialog
-    // handleClose (done) {
-    //   this.$confirm('确认关闭？')
-    //     .then(_ => {
-    //       done()
-    //     })
-    //     .catch(_ => {})
-    // },
-    //
     // 2 接入主机
     insertPort () {
-      this.insertPorts(this.form).then((res) => {
+      this.insertMaster(this.form).then((res) => {
         this.$message({
+          showClose: true,
           type: 'success',
-          message: `操作成功`
+          message: `添加主机成功`
         })
       }).catch((error) => {
         console.log(error)
         this.$message({
+          showClose: true,
           type: 'error',
-          message: `操作失败`
+          message: `添加主机失败`
         })
       })
     },
-    ...mapActions(['getMasters', 'insertPorts'])
+    //  删除主机
+    deleteMaster (index, row) {
+      console.log(row._address)
+      this.deleteMasters(row._address).then((res) => {
+        this.$message({
+          showClose: true,
+          type: 'success',
+          message: `删除主机成功`
+        })
+      }).catch((error) => {
+        console.log(error)
+        this.$message({
+          showClose: true,
+          type: 'success',
+          message: `删除主机失败`
+        })
+      })
+    },
+    ...mapActions(['getMasters', 'insertMaster', 'deleteMasters'])
   }
 }
