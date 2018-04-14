@@ -52,16 +52,24 @@
       :visible.sync="dialogVisible"
       width="30%">
       
-      <el-form :model="form">
-        <el-form-item label="IP" :label-width="formLabelWidth">
+      <el-form :model="form"
+        ref="addMasterForm"
+        :rules="rules">
+        <el-form-item
+          label="IP"
+          :label-width="formLabelWidth"
+          prop="node_ip">
           <el-input v-model="form.node_ip" clearable></el-input>
         </el-form-item>
-        <el-form-item label="端口" :label-width="formLabelWidth">
+        <el-form-item
+          label="端口"
+          :label-width="formLabelWidth"
+          prop="node_port">
           <el-input v-model="form.node_port" clearable></el-input>
         </el-form-item>
       </el-form>
       <span slot="footer" class="dialog-footer">
-        <el-button @click="dialogVisible = false">取 消</el-button>
+        <el-button @click="cancleAddMasterForm">取 消</el-button>
         <el-button type="primary" @click="insertPort()">确 定</el-button>
       </span>
     </el-dialog>

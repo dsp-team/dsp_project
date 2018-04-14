@@ -41,7 +41,7 @@ export default {
     deleteMasters: (context, nodeIp) => {
       console.log(nodeIp)
       return new Promise((resolve, reject) => {
-        axios.put(`/api/v1/nodes?node_ip=${nodeIp}&node_port=2376&force=True`, nodeIp)
+        axios.delete(`/api/v1/nodes?node_ip=${nodeIp}&node_port=2376&force=True`)
         .then(function (result) {
           // 删除成功之后
           context.dispatch('getMasters')

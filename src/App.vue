@@ -12,7 +12,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   /* -webkit-font-smoothing: antialiased;
@@ -23,5 +23,13 @@ export default {
 *{
   margin: 0 auto;
   padding: 0;
+}
+.el-message{
+  display: block;
+  width: 20px;
+  text-align: left;
+  i {
+    float: left;
+  }
 }
 </style>
