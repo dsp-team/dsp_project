@@ -42,7 +42,7 @@ export default {
             this.$message({
               showClose: true,
               type: 'success',
-              message: `添加主机成功`
+              message: `添加节点成功`
             })
             this.dialogVisible = false
             this.$refs.addMasterForm.resetFields()
@@ -51,7 +51,7 @@ export default {
             this.$message({
               showClose: true,
               type: 'error',
-              message: `添加主机失败`
+              message: `添加节点失败`
             })
           })
         } else {
@@ -60,26 +60,38 @@ export default {
         }
       })
     },
-    // 取消添加主机对话框
+    // 2 取消添加主机对话框
     cancleAddMasterForm () {
       this.dialogVisible = false
       this.$refs.addMasterForm.resetFields()
     },
-    //  删除主机
+    //  3 删除主机
     deleteMaster (index, row) {
+      console.log(row)
       console.log(row._address)
-      this.deleteMasters(row._address).then((res) => {
-        this.$message({
-          showClose: true,
-          type: 'success',
-          message: `删除主机成功`
+      this.$confirm('此操作将永久删除该节点, 是否继续?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.deleteMasters(row._address).then((res) => {
+          this.$message({
+            showClose: true,
+            type: 'success',
+            message: `删除主机成功`
+          })
+        }).catch((error) => {
+          console.log(error)
+          this.$message({
+            showClose: true,
+            type: 'error',
+            message: `删除主机失败`
+          })
         })
-      }).catch((error) => {
-        console.log(error)
+      }).catch(() => {
         this.$message({
-          showClose: true,
-          type: 'error',
-          message: `删除主机失败`
+          type: 'info',
+          message: '已取消删除'
         })
       })
     },

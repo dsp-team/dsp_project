@@ -38,6 +38,7 @@ export default {
         })
       })
     },
+    // 3 删除主机
     deleteMasters: (context, nodeIp) => {
       console.log(nodeIp)
       return new Promise((resolve, reject) => {

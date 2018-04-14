@@ -27,6 +27,11 @@
             <span slot="title">应用模板</span>
           </el-menu-item>
 
+          <el-menu-item index="/pod">
+            <i class="el-icon-goods"></i>
+            <span slot="title">容器</span>
+          </el-menu-item>
+
           <el-menu-item index="/master">
             <i class="el-icon-star-on"></i>
             <span slot="title">主机</span>
