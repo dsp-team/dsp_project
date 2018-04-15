@@ -1,7 +1,8 @@
 <template>
   <div class="master">
     <!-- {{msg}} -->
-    <el-card class="box-card">
+    <!-- <el-card class="box-card"> -->
+      <div class="box-card">
         <!-- 接入主机 -->
         <div class="create-master">
           <el-button type="primary" icon="el-icon-plus" @click="dialogVisible = true">接入主机</el-button>
@@ -9,41 +10,44 @@
 
         <!-- 主机列表 -->
         <div class="master-content">
-          <el-table
-            :data="masters"
-            style="width: 98% ;border:1px solid #EBEEF5"
-            stripe>
-            <el-table-column
-              prop="_host"
-              label="主机">
-            </el-table-column>
-            <el-table-column
-              prop="_address"
-              label="IP">
-            </el-table-column>
-            <!-- <el-table-column
-              prop="_active"
-              label="状态">
-            </el-table-column> -->
-            <el-table-column
-              prop="_state"
-              label="状态">
-            </el-table-column>
-            <el-table-column
-              prop="_role"
-              label="角色">
-            </el-table-column>
-            <el-table-column label="操作">
-              <template slot-scope="scope">
-                <el-button
-                  size="mini"
-                  type="danger"
-                  @click="deleteMaster(scope.$index, scope.row)">删除</el-button>
-              </template>
-            </el-table-column>
-          </el-table>
+          <el-card class="box-card">
+            <el-table
+              :data="masters"
+              style="width: 98% ;border:1px solid #EBEEF5"
+              stripe>
+              <el-table-column
+                prop="_host"
+                label="主机">
+              </el-table-column>
+              <el-table-column
+                prop="_address"
+                label="IP">
+              </el-table-column>
+              <!-- <el-table-column
+                prop="_active"
+                label="状态">
+              </el-table-column> -->
+              <el-table-column
+                prop="_state"
+                label="状态">
+              </el-table-column>
+              <el-table-column
+                prop="_role"
+                label="角色">
+              </el-table-column>
+              <el-table-column label="操作">
+                <template slot-scope="scope">
+                  <el-button
+                    size="mini"
+                    type="danger"
+                    @click="deleteMaster(scope.$index, scope.row)">删除</el-button>
+                </template>
+              </el-table-column>
+            </el-table>
+          </el-card>
         </div>
-    </el-card>
+      </div>
+    <!-- </el-card> -->
 
 
     <!-- dialog -->

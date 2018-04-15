@@ -20,14 +20,11 @@ export default {
     getPods: (context) => {
       axios.get('/api/container/list').then((res) => {
         console.log(res.data)
-        // res.data.forEach(element => {
-        //   console.log(element.name)
-        //   // element.name[0] = element.name[0].splice(1, 2, '')
-        //   console.log(typeof (element))
-        //   element.forEach(e => {
-        //     console.log(e)
-        //   })
-        // })
+        res.data.forEach(element => {
+          console.log(element.state)
+          console.log((element.status).slice(3, 5))
+          console.log(element.state)
+        })
         context.commit('alterPods', res.data)
       })
     }

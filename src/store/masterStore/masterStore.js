@@ -51,6 +51,20 @@ export default {
           reject(error)
         })
       })
+    },
+    //  4 初始化集群
+    initSwarm: (context, form) => {
+      console.log(form)
+      return new Promise((resolve, reject) => {
+        axios.delete(`/api/v1/nodes?node_ip=192.168.124.11&node_port=2376&force=True`)
+        .then(function (result) {
+          // 删除成功之后
+          context.dispatch('getMasters')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
+      })
     }
   }
 }

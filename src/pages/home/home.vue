@@ -55,13 +55,13 @@
     
     <!--右侧  -->
     <el-container>
-      <!-- 右侧header -->
-      <!-- <el-header></el-header> -->
-
+      <el-header>Header</el-header>
       <!-- 右侧main -->
       <el-main>
         <el-col><!--放置路由 显示-->
+        <!-- <el-card class="box-card"> -->
           <router-view/>
+          <!-- </el-card> -->
         </el-col>
       </el-main>
 
