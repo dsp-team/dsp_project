@@ -4,8 +4,9 @@ export default {
   name: 'pod',
   data () {
     return {
+      loading: false,
       multipleSelection: [],
-      podIDs:[], // 存储选中的容器行的ids 
+      podIDs: [],  // 存储选中的容器行的ids
       // 删除容器的表单 通过computed 提取多选的ids进入list
       deletePodsForm: {
         list: [],
@@ -44,6 +45,11 @@ export default {
     }
   },
   created: function () {
+    // this.Loading().then(() => {
+    //   this.getPods().then(() => {
+    //     this.CloseLoading()
+    //   })
+    // })
     this.getPods()
   },
   computed: {
@@ -58,6 +64,12 @@ export default {
     ...mapGetters(['pods'])
   },
   methods: {
+    Loading () {
+      this.loading = true
+    },
+    CloseLoading () {
+      this.loading = false
+    },
     // 添加容器对话框的删除export的input
     // removeExport (item) {
     //   var index = this.createPodForm.domains.indexOf(item)
@@ -80,6 +92,7 @@ export default {
       console.log(this.createPodForm)
       this.$refs.relCreatePod.validate((valid) => {
         if (valid) {
+          this.loading = true
           this.createPodServer(this.createPodForm).then((res) => {
             this.$message({
               showClose: true,
@@ -88,6 +101,7 @@ export default {
             })
             this.dialogVisible = false
             this.$refs.relCreatePod.resetFields()
+            this.loading = false
           }).catch((error) => {
             console.log(error)
             this.$message({
@@ -117,12 +131,14 @@ export default {
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
+          this.loading = true
           this.deletePodsServer(this.deletePodsForm).then((res) => {
             this.$message({
               showClose: true,
               message: '删除成功',
               type: 'success'
             })
+            this.loading = false
           }).catch((error) => {
             console.log(error)
             this.$message({

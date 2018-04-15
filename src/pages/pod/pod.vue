@@ -28,7 +28,11 @@
               style="width: 100%"
               v-model="deletePodsForm"
               ref="multipleTable"
-              @selection-change="handleSelectionChange">
+              @selection-change="handleSelectionChange"
+              v-loading="loading"
+              element-loading-text="拼命加载中"
+              element-loading-spinner="el-icon-loading"
+              element-loading-background="rgba(0, 0, 0, 0.8)">
               <el-table-column
                 type="selection"
                 width="55">
@@ -56,8 +60,8 @@
                 label="当前状态">
                 <template slot-scope="scope">
                   <!-- 对当前状态进行判断 为running时显示绿色的进度条 否则进度条绿色为0 -->
-                  <el-progress v-if="scope.row.state == 'running'" :percentage="100" status="success" :show-text='false'></el-progress>
-                  <el-progress v-if="scope.row.state !== 'running'" :percentage="0" status="exception" :show-text='false'></el-progress>
+                  <el-progress v-if="scope.row.state == 'running'" stroke-width="12" :percentage="100" status="success" :show-text='false'></el-progress>
+                  <el-progress v-if="scope.row.state !== 'running'" stroke-width="12" :percentage="0" status="exception" :show-text='false'></el-progress>
                 </template>
               </el-table-column>
               <el-table-column

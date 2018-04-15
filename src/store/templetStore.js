@@ -20,7 +20,7 @@ export default {
 
     // 2 获取应用模板
     getTemplates: (context) => {
-      axios.get('/dsp/apptemplate/getall').then((res) => {
+      axios.get('http://192.168.123.251/dsp/apptemplate/getall').then((res) => {
         context.commit('alterTemplates', res.data)
       })
     },
@@ -28,7 +28,7 @@ export default {
     deleteTemplate: (context, data) => {
       var obj = {name: data}
       return new Promise((resolve, reject) => {
-        axios.post('/dsp/apptemplate/delete', obj)
+        axios.post('http://192.168.123.251/dsp/apptemplate/delete', obj)
           .then(function (result) {
             context.dispatch('getTemplates')
             resolve(result)
@@ -42,7 +42,7 @@ export default {
     addTemplate: (context, form) => {
       console.log(form)
       return new Promise((resolve, reject) => {
-        axios.post('/dsp/apptemplate/add', form).then((result) => {
+        axios.post('http://192.168.123.251/dsp/apptemplate/add', form).then((result) => {
           context.dispatch('getTemplates')
           resolve(result)
         }).catch((error) => {
@@ -55,7 +55,7 @@ export default {
     getDetailByName: (context, data) => {
       console.log(data)
       return new Promise((resolve, reject) => {
-        axios.post('/dsp/apptemplate/get', data).then((res) => {
+        axios.post('http://192.168.123.251/dsp/apptemplate/get', data).then((res) => {
           resolve(res)
         }).catch((error) => {
           reject(error)
@@ -67,7 +67,7 @@ export default {
     editTemplateDetail: (context, data) => {
       console.log(data)
       return new Promise((resolve, reject) => {
-        axios.post('/dsp/apptemplate/set', data).then((res) => {
+        axios.post('http://192.168.123.251/dsp/apptemplate/set', data).then((res) => {
           resolve(res)
         }).catch((error) => {
           reject(error)

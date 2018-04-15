@@ -16,6 +16,8 @@ import Master from '@/pages/master/master.vue'
 import Internet from '@/pages/internet/internet.vue'
 import UserCenter from '@/pages/user_center/user_center.vue'
 
+// 创建应用
+
 // import index from 'vue';
 
 Vue.use(Router)
