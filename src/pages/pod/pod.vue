@@ -8,7 +8,8 @@
         <div class="btn-box" >
             <el-button
               type="primary"
-              class="btn">
+              class="btn"
+              @click="dialogVisible = true">
               <i class="el-icon-plus"></i>
               新增容器
             </el-button>
@@ -54,7 +55,8 @@
               <el-table-column
                 label="启动时间">
                 <template slot-scope="scope">
-                  <span>{{'更新于' + scope.row.status.slice(3, 5) + '小时前'}}</span>
+                  <span v-if="scope.row.status.indexOf('hours') !== -1">{{'更新于' + scope.row.status.slice(3, 5) + '小时前'}}</span>
+                  <span v-if="scope.row.status.indexOf('hours') == -1">{{'更新于' + scope.row.status.slice(3, 5) + '分钟前'}}</span>
                 </template>
               </el-table-column>
             </el-table>
@@ -62,6 +64,55 @@
         </div>
       </div>
     </el-card>
+
+    <!-- 添加容器弹框 -->
+    <el-dialog
+      title="创建容器"
+      :visible.sync="dialogVisible"
+      width="30%">
+      
+      <el-form :model="createPodForm"
+        ref="relCreatePod"
+        :rules="rules">
+
+        <el-form-item
+          label="镜像名称"
+          :label-width="formLabelWidth"
+          prop="image">
+          <el-input
+            v-model="createPodForm.image"
+            placeholder="例如asd12"
+            clearable>
+          </el-input>
+        </el-form-item>
+
+        <el-form-item
+          label="运行命令"
+          :label-width="formLabelWidth"
+          prop="command">
+          <el-input
+            v-model="createPodForm.command"
+             placeholder="例如/bin/sh"
+             clearable>
+          </el-input>
+        </el-form-item>
+
+        <el-form-item
+          label="映射端口"
+          :label-width="formLabelWidth"
+          prop="exports">
+          <el-input
+            v-model="createPodForm.exports"
+            placeholder="例如:1210:10024"
+            clearable>
+          </el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="callOff()">取 消</el-button>
+        <el-button type="primary" @click="createPod()">确 定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 

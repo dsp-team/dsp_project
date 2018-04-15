@@ -27,7 +27,20 @@
           }
         }
       }
+    } 
+  }
+  // 对话框
+  .el-dialog__wrapper{
+    .el-dialog{
+      .el-dialog__body{
+        .el-form{
+          .el-form-item{
+            .el-input{
+              width:calc(100% -80px - 60px) !important;
+            }
+          }
+        }
+      }
     }
-    
   }
 }

@@ -19,13 +19,23 @@ export default {
     // 2 容器
     getPods: (context) => {
       axios.get('/api/container/list').then((res) => {
-        console.log(res.data)
         res.data.forEach(element => {
-          console.log(element.state)
-          console.log((element.status).slice(3, 5))
-          console.log(element.state)
+          console.log(element.status)
         })
         context.commit('alterPods', res.data)
+      })
+    },
+    // 创建容器
+    createPodServer: (context, form) => {
+      console.log(form)
+      return new Promise((resolve, reject) => {
+        axios.post('/api/container/create', form).then(function (result) {
+          // 保存成功之后
+          context.dispatch('getPods')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
       })
     }
   }
