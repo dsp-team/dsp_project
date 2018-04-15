@@ -29,7 +29,7 @@ export default {
     createPodServer: (context, form) => {
       console.log(form)
       return new Promise((resolve, reject) => {
-        axios.post('/api/container/create', form).then(function (result) {
+        axios.post('/api/container/create', form).then((result) => {
           // 保存成功之后
           context.dispatch('getPods')
           resolve(result)
@@ -37,6 +37,18 @@ export default {
           reject(error)
         })
       })
-    }
+    },
+    deletePodsServer: (context, form) => {
+      console.log(form)
+      return new Promise((resolve, reject) => {
+        axios.post('/api/container/delete', form).then((result) => {
+          // 保存成功之后
+          context.dispatch('getPods')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
+      })
+    },
   }
 }

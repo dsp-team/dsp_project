@@ -13,18 +13,26 @@
               <i class="el-icon-plus"></i>
               新增容器
             </el-button>
+            <el-button
+              type="danger"
+              class="btn"
+              icon="el-icon-delete"
+              @click="deletePods">
+            </el-button>
           </div>
         <div class="tabel-box">
           <el-card class="box-card">
+            <div style="display:none">{{deletePodsForm}}{{deletePodsForm2}}</div>
             <el-table
               :data="pods"
               style="width: 100%"
-              v-model="deleteForm"
-              ref="multipleTable">
+              v-model="deletePodsForm"
+              ref="multipleTable"
+              @selection-change="handleSelectionChange">
               <el-table-column
                 type="selection"
-                width="55"
-              ></el-table-column>
+                width="55">
+              </el-table-column>
               <el-table-column
                 label="容器">
                 <template slot-scope="scope">
