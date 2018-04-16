@@ -2,45 +2,50 @@
   
   <el-row class="templet_container">
     <el-col :span="24">
-      <el-card class="box-card">
-        <div slot="header" class="clearfix">
-          <span>应用模板</span>
-        </div>
+      <div class="box-card">
         <div class="text item">
-          <el-button
-            class="templet_btn"
-            type="primary"
-            icon="el-icon-plus"
-            @click="dialogVisible = true">创建应用模板
-          </el-button>
-          <el-col :span="24"
-            class="templet">
+          <div class="templat_btn_box">
+            <el-button
+              :span="24"
+              class="templet_btn"
+              type="primary"
+              icon="el-icon-plus"
+              @click="dialogVisible = true">创建应用模板
+            </el-button>
+          </div>
+          
+          <div class="template-content">
+            <el-col
+              class="templet"
+              :span="3"
+              v-for="item in templates"
+              :key="item"
+              shadow="hover">
               <el-card
                 class="templet_box"
-                shadow="hover"
-                v-for="item in templates"
-                :key="item"
+                :body-style="{ padding: '0px' }"
                 href="javascript:void(0)">
-                <img src="../../assets/templet.png"
-                    @click="gotoDetail(item)"/>
-                  <span :model="templateName">{{item}}</span>{{templateName}}
-                  <div class="top clearfix">
-                    <el-button
-                      type="danger"
-                      icon="el-icon-close"
-                      circle
-                      size="mini"
-                      @click="deleteTemp(item)"></el-button>
-                  </div>
+                <img
+                  class="image"
+                  src="../../assets/templet.png"
+                  @click="gotoDetail(item)"/>
+                <span :model="templateName">{{item}}</span>
+                    
+                <div class="bottom clearfix">
+                  <el-button
+                    size="medium "
+                    class="button"
+                    icon="el-icon-delete"
+                    circle
+                    @click="deleteTemp(item)"></el-button>
+                </div>
               </el-card>
-          </el-col>
+            </el-col>
+          </div>
         </div>
-      </el-card>
-
-      
+      </div> 
     </el-col>
     
-  
 
   <!-- 创建模板模态框 -->
   <!-- :before-close="handleClose" -->

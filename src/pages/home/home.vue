@@ -66,7 +66,9 @@
       </el-main>
 
       <!-- 右侧footer -->
-      <el-footer></el-footer>
+      <el-footer>
+        <p>CopyRight @Grace</p>
+      </el-footer>
 
     </el-container>
 

@@ -1,9 +1,10 @@
 <template>
   <div id="pod">
-    <el-card class="box-card">
-      <div slot="header" class="clearfix">
+    <!-- <el-card class="box-card"> -->
+    <div class="box-card">
+      <!-- <div slot="header" class="clearfix">
         <p>容器</p>
-      </div>
+      </div> -->
       <div class="content">
         <div class="btn-box" >
             <el-button
@@ -75,7 +76,7 @@
           </el-card>
         </div>
       </div>
-    </el-card>
+    </div>
 
     <!-- 添加容器弹框 -->
     <el-dialog

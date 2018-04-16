@@ -20,7 +20,7 @@ export default {
   actions: {
     // 2 主机
     getMasters: (context) => {
-      axios.get('http://192.168.123.251/api/v1/nodes').then((res) => {
+      axios.get('/api/v1/nodes').then((res) => {
         console.log(JSON.parse(res.data))
         context.commit('alterMasters', JSON.parse(res.data))
       })
@@ -29,7 +29,7 @@ export default {
     insertMaster: (context, form) => {
       console.log(form)
       return new Promise((resolve, reject) => {
-        axios.put('/api/v1/nodes', form).then(function (result) {
+        axios.put('/master/api/v1/nodes', form).then(function (result) {
           // 保存成功之后
           context.dispatch('getMasters')
           resolve(result)

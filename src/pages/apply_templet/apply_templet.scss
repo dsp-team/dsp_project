@@ -8,63 +8,63 @@
   }
 }
 .templet_container{
-  .templet_btn{
-    float: left;
-    margin: 10px;
-  }
-  // 放置模板容器
-  .templet{
-    .el-card{
-      width: 240px;
-      height:100vh;
-    }
-    // 每个模板
-    .templet_box{
-      width: 240px;
-      height: 120px;
-      // border: 1px solid #e4e7ed;
-      border-radius: 4px;
-      // box-shadow: 0 0 4px #ccc;
-      background-color: #ffffff;
+  .templat_btn_box{
+    width: 100%;
+    height:80px;
+    .templet_btn{
       float: left;
       margin: 10px;
-      list-style: none;
-      text-align: left;
-      line-height: 100px;
-      font-size: 16px;
-      position: relative;      
-      img{
-        float: left;
-        margin: 10px;
-        width: 80px;
+      margin:20px;
+    }
+  }
+  
+  // 放置模板容器
+  .template-content{
+    .templet{
+      margin:10px;
+      // 每个模板
+      .templet_box{
+        .image {
+          width: 100%;
+          display: block;
+        }
+        .clearfix:before,
+        .clearfix:after {
+            display: table;
+            content: "";
+        }
+        
+        .clearfix:after {
+            clear: both
+        }
+        .bottom{
+          margin-top: 13px;
+          line-height: 12px;
+          .button {
+            // width: 30px;
+            // height: 30px;
+            padding: 0;
+            float: right;
+            position: relative;
+            bottom: 6px;
+            right: 6px;
+          }
+        } 
       }
-      .top{
-        .el-button{
-          width: 10px;
-          height: 30px;
-          border-radius:50% 50%;
-          position: absolute;
-          top:0px;right: 0px;
-        }
-        i{
-          position: absolute;
-          top: 8px;
-          right: 8px;
-        }
-      } 
+    }
+    .el-dialog{
+      .el-dialog__header{
+        height: 100px;
+        border-bottom: 1px solid #E4E7ED;
+      }
+      .el-dialog__body{
+  
+      }
+      .el-dialog__footer{
+  
+      }
     }
   }
-  .el-dialog{
-    .el-dialog__header{
-      height: 100px;
-      border-bottom: 1px solid #E4E7ED;
-    }
-    .el-dialog__body{
-
-    }
-    .el-dialog__footer{
-
-    }
-  }
+  
   
 }
