@@ -17,11 +17,23 @@ export default {
   actions: {
     // 2 获取应用
     getApplys: (context) => {
-      axios.get('/api/container/list').then((res) => {
-        res.data.forEach(element => {
-          console.log(element.status)
-        })
+      axios.get('/api/apps/list').then((res) => {
+        console.log((res.data))
         context.commit('alterApplys', res.data)
+      })
+    },
+  // 删除应用
+    deleteServerApps: (context, form) => {
+      console.log(form)
+      return new Promise((resolve, reject) => {
+        axios.post('/api/apps/delete', form)
+        .then(function (result) {
+          // 删除成功之后
+          context.dispatch('getApplys')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
       })
     }
   }

@@ -45,11 +45,6 @@ export default {
     }
   },
   created: function () {
-    // this.Loading().then(() => {
-    //   this.getPods().then(() => {
-    //     this.CloseLoading()
-    //   })
-    // })
     this.getPods()
   },
   computed: {

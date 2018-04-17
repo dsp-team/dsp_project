@@ -16,19 +16,33 @@ export default {
   methods: {
     ...mapActions(['getRepos', 'deleteServerRepo']),
     deleteRepo (imageName) {
-      console.log(imageName)
-      this.deleteServerRepo(imageName).then((res) => {
-        this.$message({
-          showClose: true,
-          message: '删除成功',
-          type: 'success'
+      var obj = { }
+      obj.imagename = imageName
+      console.log(obj)
+      this.$confirm('是否删除容器?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then((res) => {
+        this.deleteServerRepo(obj).then((res) => {
+          this.$message({
+            showClose: true,
+            message: '删除成功',
+            type: 'success'
+          })
+        }).catch((error) => {
+          console.log(error)
+          this.$message({
+            showClose: true,
+            message: '删除失败',
+            type: 'error'
+          })
         })
-      }).catch((error) => {
-        console.log(error)
+      }).catch(() => {
         this.$message({
           showClose: true,
-          message: '删除失败',
-          type: 'error'
+          type: 'info',
+          message: '已取消删除'
         })
       })
     }
