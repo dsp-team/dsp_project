@@ -6,7 +6,9 @@ export default {
       multipleSelection: [],
       deleteAppsForm: {
         apps: []
-      }
+      },
+      dialogVisible: false,
+      createMethod: '' // 部署应用方式
 
     }
   },
@@ -21,6 +23,11 @@ export default {
       'getApplys',
       'deleteServerApps'
     ]),
+    // 创建应用 - 选择部署方式(通过label来传递参数跳到相关路由)
+    gotoMethod (createMethod) {
+      this.$router.push({path: `/apply/${createMethod}`})
+    },
+
     // 删除应用
     handleSelectionChange (val) {
       this.multipleSelection = val
@@ -30,20 +37,33 @@ export default {
         this.deleteAppsForm.apps.push(element.id)
       })
     },
+    // 删除应用
     deleteApps () {
       console.log(this.deleteAppsForm)
-      this.deleteServerApps(this.deleteAppsForm).then((res) => {
-        this.$message({
-          showClose: true,
-          message: '删除应用成功',
-          type: 'success'
+      this.$confirm('是否删除容器?', '提示', {
+        confirmButtonText: '确定',
+        cancelButtonText: '取消',
+        type: 'warning'
+      }).then(() => {
+        this.deleteServerApps(this.deleteAppsForm).then((res) => {
+          this.$message({
+            showClose: true,
+            message: '删除应用成功',
+            type: 'success'
+          })
+        }).catch((error) => {
+          console.log(error)
+          this.$message({
+            showClose: true,
+            message: '删除应用失败',
+            type: 'error'
+          })
         })
-      }).catch((error) => {
-        console.log(error)
+      }).catch(() => {
         this.$message({
           showClose: true,
-          message: '删除应用失败',
-          type: 'error'
+          type: 'info',
+          message: '已取消删除'
         })
       })
     }

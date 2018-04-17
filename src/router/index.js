@@ -7,6 +7,11 @@ import Apply from '@/pages/apply/apply.vue'
 import Home from '@/pages/home/home.vue'
 import Running from '@/pages/apply/running/running.vue'
 import Stoped from '@/pages/apply/stoped/stoped.vue'
+import CreateAppImage from '@/pages/apply/create-app-image/create-app-image.vue'
+// import CreateAppImageStep1 from '@/pages/apply/create-app-image/step/step1.vue'
+// import CreateAppImageStep2 from '@/pages/apply/create-app-image/step/step2.vue'
+// import CreateAppImageStep3 from '@/pages/apply/create-app-image/step/step3.vue'
+import CreateAppTemplate from '@/pages/apply/create-app-template/create-app-template.vue'
 
 import Repo from '@/pages/repo/repo.vue'
 import ApplyTemplet from '@/pages/apply_templet/apply_templet.vue'
@@ -48,6 +53,23 @@ export default new Router({
               path: 'stoped',
               name: 'stoped',
               component: Stoped
+            },
+            {
+              path: 'createAppImage',
+              name: 'createAppImage',
+              component: CreateAppImage
+              // children: [
+              //   {
+              //     path: '',
+              //     name: 'createAppImageStep1',
+              //     component: CreateAppImageStep1
+              //   }
+              // ]
+            },
+            {
+              path: 'createAppTemplate',
+              name: 'cretaeAppTemplate',
+              component: CreateAppTemplate
             }
           ]
         },

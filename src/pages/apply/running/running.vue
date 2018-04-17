@@ -51,11 +51,26 @@
                 </template>
               </el-table-column>
             </el-table>
-            {{deleteAppsForm}}
           </el-card>
         </div>
       </div>
     </div>
+    <!-- dialog -->
+    <el-dialog
+      title="部署应用"
+      :visible.sync="dialogVisible"
+      width="30%"
+      :before-close="handleClose">
+      <span>请选择下面一种方式</span>
+      <div class="create-method">
+        <el-radio v-model="createMethod" label="createAppImage" border>通过镜像部署</el-radio>
+        <el-radio v-model="createMethod" label="createAppTemplate" border>一键部署</el-radio>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="gotoMethod(createMethod)">确 定</el-button>
+      </span>
+
+    </el-dialog>
   </div>
 </template>
 
