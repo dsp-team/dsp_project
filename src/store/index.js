@@ -5,6 +5,7 @@ import masterStore from './masterStore/masterStore.js' // 主机
 import podStore from './podStore/podStore.js' // 容器
 import applyStore from './applyStore/applyStore.js' // 应用
 import repoStore from './repoStore/repoStore.js' // 镜像
+import networkStore from './networkStore/networkStore.js' // 网络
 // 必须在创建store之前调用use函数
 Vue.use(Vuex)
 export default new Vuex.Store({
@@ -13,6 +14,7 @@ export default new Vuex.Store({
     masterStore,
     podStore,
     applyStore,
-    repoStore
+    repoStore,
+    networkStore
   }
 })

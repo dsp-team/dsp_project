@@ -27,13 +27,11 @@
             <el-table
               :data="pods"
               style="width: 100%"
+              stripe
               v-model="deletePodsForm"
               ref="multipleTable"
               @selection-change="handleSelectionChange"
-              v-loading="loading"
-              element-loading-text="拼命加载中"
-              element-loading-spinner="el-icon-loading"
-              element-loading-background="rgba(0, 0, 0, 0.8)">
+              v-loading="loading">
               <el-table-column
                 type="selection"
                 width="55">
@@ -86,6 +84,7 @@
       
       <el-form :model="createPodForm"
         ref="relCreatePod"
+        status-icon='true'
         :rules="rules">
 
         <el-form-item

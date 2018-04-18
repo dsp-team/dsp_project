@@ -12,13 +12,16 @@ import CreateAppImage from '@/pages/apply/create-app-image/create-app-image.vue'
 // import CreateAppImageStep2 from '@/pages/apply/create-app-image/step/step2.vue'
 // import CreateAppImageStep3 from '@/pages/apply/create-app-image/step/step3.vue'
 import CreateAppTemplate from '@/pages/apply/create-app-template/create-app-template.vue'
+// import CreateAppTempStep1 from '@/pages/apply/create-app-template/step/step1.vue'
+// import CreateAppTempStep2 from '@/pages/apply/create-app-template/step/step2.vue'
+// import CreateAppTempStep3 from '@/pages/apply/create-app-template/step/step3.vue'
 
 import Repo from '@/pages/repo/repo.vue'
 import ApplyTemplet from '@/pages/apply_templet/apply_templet.vue'
 import TempletDetail from '@/pages/apply_templet/detail/templet_detail.vue'
 import Pod from '@/pages/pod/pod.vue'
 import Master from '@/pages/master/master.vue'
-import Internet from '@/pages/internet/internet.vue'
+import Internet from '@/pages/network/network.vue'
 import UserCenter from '@/pages/user_center/user_center.vue'
 
 // 创建应用
@@ -70,6 +73,23 @@ export default new Router({
               path: 'createAppTemplate',
               name: 'cretaeAppTemplate',
               component: CreateAppTemplate
+              // children: [
+              //   {
+              //     path: '',
+              //     name: 'createAppTempStep1',
+              //     component: CreateAppTempStep1
+              //   },
+              //   {
+              //     path: 'createAppTempStep2',
+              //     name: 'createAppTempStep2',
+              //     component: CreateAppTempStep2
+              //   },
+              //   {
+              //     path: 'createAppTempStep3',
+              //     name: 'createAppTempStep3',
+              //     component: CreateAppTempStep3
+              //   }
+              // ]
             }
           ]
         },

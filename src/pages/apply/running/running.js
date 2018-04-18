@@ -1,4 +1,6 @@
+'use strict'
 import { mapGetters, mapActions } from 'vuex'
+let moment = require('moment')
 
 export default {
   data () {
@@ -8,7 +10,8 @@ export default {
         apps: []
       },
       dialogVisible: false,
-      createMethod: '' // 部署应用方式
+      createMethod: '', // 部署应用方式
+      moment
 
     }
   },

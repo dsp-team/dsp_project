@@ -21,7 +21,7 @@ export default {
     // 2 主机
     getMasters: (context) => {
       axios.get('/api/v1/nodes').then((res) => {
-        console.log(JSON.parse(res.data))
+        // console.log(JSON.parse(res.data))
         context.commit('alterMasters', JSON.parse(res.data))
       })
     },

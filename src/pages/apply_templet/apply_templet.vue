@@ -54,10 +54,12 @@
       class="templet_dialog"
       :visible.sync="dialogVisible"
       center
-      width="30%">
+      width="30%"
+      >
       <el-form
         :label-position="labelPosition"
         label-width="80px"
+        status-icon='true'
         ref="addTemplate"
         :rules="rules"
         :model="addTempDialog">

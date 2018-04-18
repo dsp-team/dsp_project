@@ -32,4 +32,27 @@ export default {
     float: left;
   }
 }
+.el-table{
+  // border:1px solid #EBEEF5;
+  .el-table__header-wrapper{
+    th{
+      text-align: center;
+      background-color:#F1F3F6;
+      height: 40px;
+      line-height: 40px; 
+      font-size: 16px;
+    }
+  }
+  .el-table__body-wrapper{
+    .el-table__body{
+      tbody{
+        tr{
+          min-height: 50px !important;  
+        }
+      }
+    
+  }
+  }
+  
+}
 </style>

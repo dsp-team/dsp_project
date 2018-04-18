@@ -35,6 +35,34 @@ export default {
           reject(error)
         })
       })
+    },
+    // 通过镜像创建应用
+    createServerAppImage: (context, form) => {
+      console.log(form)
+      return new Promise((resolve, reject) => {
+        axios.post('/api/app/create', form)
+        .then(function (result) {
+          // 创建成功之后
+          context.dispatch('getApplys')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
+      })
+    },
+    // 通过模板部署应用
+    createServerAppTemp: (context, form) => {
+      console.log(form)
+      return new Promise((resolve, reject) => {
+        axios.post('/api/template/start', form)
+        .then(function (result) {
+          // 删除成功之后
+          context.dispatch('getApplys')
+          resolve(result)
+        }).catch((error) => {
+          reject(error)
+        })
+      })
     }
   }
 }

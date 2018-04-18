@@ -13,7 +13,7 @@
           <el-card class="box-card">
             <el-table
               :data="masters"
-              style="width: 98% ;border:1px solid #EBEEF5"
+              style="width: 98%"
               stripe>
               <el-table-column
                 prop="_host"
@@ -58,6 +58,7 @@
       
       <el-form :model="form"
         ref="addMasterForm"
+        status-icon='true'
         :rules="rules">
         <el-form-item
           label="IP"

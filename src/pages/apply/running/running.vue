@@ -25,29 +25,34 @@
             <el-table
               :data="applys"
               style="width: 100%"
+              stripe
               ref="multipleTable"
-              @selection-change="handleSelectionChange">
+              @selection-change="handleSelectionChange"
+              :default-sort = "{prop: 'service_name', order: 'descending'}">
               <el-table-column
                 type="selection"
                 width="55">
               </el-table-column>
               <el-table-column
                 label="应用名称"
-                prop="service_name">
+                prop="service_name"
+                sortable>
               </el-table-column>
               <el-table-column
                 prop="image_name"
-                label="镜像名">
+                label="镜像名"
+                sortable>
               </el-table-column>
               <el-table-column
                 label="端口"
                 prop="endpoint">
               </el-table-column>
               <el-table-column
-                label="创建时间">
-                <template slot-scope="scope">
+                label="创建时间"
+                >
+                <template slot-scope="scope"  >
                   <!-- <span>{{scope.row.create_date | moment }}</span> -->
-                  <span>{{scope.row.create_date}}</span>
+                  <span>{{ moment(scope.row.create_date ).format('YYYY-MM-DD:HH:MM:SS')}}</span>
                 </template>
               </el-table-column>
             </el-table>
